@@ -1,0 +1,31 @@
+@import url(/node_modules/@fortawesome/fontawesome-free/css/all.css);
+@import url(https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css);
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+p {
+  margin: 0;
+}
+
+.header {
+  display: flex;
+  font-size: 3rem;
+  padding: 1.5rem;
+  color: white;
+  background-color: #242323;
+  font-weight: 700;
+  text-shadow: black 2px 2px;
+  align-items: center;
+  gap: 1rem;
+}
