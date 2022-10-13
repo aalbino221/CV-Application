@@ -1,8 +1,8 @@
 export default function Sidebar({ changePrev }) {
   return (
-    <div>
+    <div className="sidebar">
       <section>
-        <h1>INSTRUCTIONS</h1>
+        <h2>INSTRUCTIONS</h2>
         <ol>
           <li>Select a Template</li>
           <li>
@@ -17,19 +17,24 @@ export default function Sidebar({ changePrev }) {
         </ol>
       </section>
       <section>
-        <h1>TEMPLATES</h1>
+        <h2>TEMPLATES</h2>
         <div>DEFAULT</div>
         <div>FIRST JOB</div>
       </section>
       <section>
-        <h1>DOWNLOAD</h1>
+        <h2>DOWNLOAD</h2>
         <div>
-          <button type="button" onClick={changePrev}>
-            OK
+          <button type="button" onClick={changePrev} id="toggle-btn">
+            <i className="fa-solid fa-toggle-off" />
+            PREVIEW MODE
           </button>
-          PREVIEW MODE
         </div>
-        <div>DOWNLOAD PDF</div>
+        <div>
+          <button type="button" id="download-btn">
+            <i className="fa-solid fa-download" />
+            DOWNLOAD PDF
+          </button>
+        </div>
       </section>
     </div>
   );

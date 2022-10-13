@@ -1,0 +1,179 @@
+.resume {
+  height: fit-content;
+  width: 80%;
+  padding: 1.5rem;
+}
+
+.form-header {
+  display: grid;
+  grid-template-columns: 2fr 8fr 2.5fr;
+  gap: 1rem;
+  border-bottom: 2px solid #434343;
+  padding-bottom: 1.5rem;
+}
+
+.photo {
+  background-color: #d9d9d9;
+  font-size: 90px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 0.5rem;
+  height: 100%;
+}
+
+.form-header > div + div {
+  align-self: center;
+  font-size: 1.2rem;
+}
+
+.form-header > div:nth-child(2) > h1,
+.form-header > div:nth-child(2) > p {
+  width: fit-content;
+}
+.form-header > div:nth-child(3) {
+  font-size: 0.9rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.form-header > div:nth-child(3) > div {
+  display: grid;
+  grid-template-columns: 1fr 6fr;
+  align-items: center;
+}
+
+.form-header > div:nth-child(3) > div > i {
+  font-size: 1.1rem;
+  justify-self: center;
+}
+
+.more-btn {
+  border: 0;
+  padding: 0.3rem 0.6rem;
+  font-size: 1.2rem;
+  background-color: #f0f0f0;
+}
+
+.more-btn span {
+  margin-left: 0.5rem;
+}
+
+.more-btn > i {
+  color: #333333;
+}
+
+.form-body > section {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 1rem;
+}
+
+.form-body {
+  padding-top: 1.4rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.experience,
+.education {
+  display: grid;
+  grid-template-rows: 1fr 1fr min-content;
+  grid-template-columns: 0.9fr 1fr;
+  gap: 1rem;
+  column-gap: 2rem;
+}
+
+.job-desc,
+#delete,
+.ed-desc {
+  grid-column: 1 / 3;
+}
+
+#delete {
+  border: 0;
+  padding: 0.3rem 0.6rem;
+  font-size: 1.2rem;
+  background-color: #242323;
+  color: white;
+}
+
+.form-body h2 {
+  width: fit-content;
+}
+
+.start-end {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 1.5rem;
+}
+
+.start-end > p {
+  grid-column: 1 / 3;
+  font-weight: 500;
+  color: #6e6e6e;
+}
+
+.experience > label,
+.education > label {
+  display: grid;
+  flex-direction: column;
+  font-weight: 500;
+  color: #8f8f8f;
+}
+
+input[type='date'] {
+  color: gray;
+  font-weight: 600;
+}
+
+.skills {
+  font-weight: 500;
+  display: flex;
+  flex-direction: column;
+}
+
+input,
+textarea {
+  background-color: #f0f0f0;
+  padding: 0.6rem 0.8rem;
+  border: 0;
+}
+
+.resume div > input {
+  padding: 0.2rem 0.4rem;
+}
+
+input::placeholder,
+textarea::placeholder {
+  font-weight: 600;
+}
+
+input:focus,
+textarea:focus {
+  border: 0;
+  outline: none;
+  transition: 0s ease-in-out;
+  border-bottom: #242323 2px solid;
+  margin-bottom: -2px;
+}
+
+/* PREVIEW MODE */
+
+.experience-prev > div > p:first-of-type > span:nth-child(1),
+.education-prev > div > p:first-of-type {
+  font-weight: 700;
+}
+
+.experience-prev > div > p:nth-of-type(2) > span:first-of-type {
+  font-weight: 500;
+}
+
+.experience-prev > div > p:nth-of-type(2) span:nth-child(2n),
+.experience-prev > div > p:nth-of-type(1) span:nth-child(2n),
+.education-prev > div > p:nth-of-type(2) {
+  color: #434343;
+}
