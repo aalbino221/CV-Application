@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/.github.io/cv-application/static/css/main.fc445063.css",
+    "main.js": "/.github.io/cv-application/static/js/main.ded458db.js",
+    "static/js/787.34a20539.chunk.js": "/.github.io/cv-application/static/js/787.34a20539.chunk.js",
+    "static/media/fa-solid-900.ttf": "/.github.io/cv-application/static/media/fa-solid-900.b48ad290d0335879a92b.ttf",
+    "static/media/fa-brands-400.ttf": "/.github.io/cv-application/static/media/fa-brands-400.f9ee61fab3c11e2f3ed3.ttf",
+    "static/media/fa-solid-900.woff2": "/.github.io/cv-application/static/media/fa-solid-900.66104b766c3d0462b3c5.woff2",
+    "static/media/fa-brands-400.woff2": "/.github.io/cv-application/static/media/fa-brands-400.e1a247a5ef41e1975742.woff2",
+    "static/media/fa-regular-400.ttf": "/.github.io/cv-application/static/media/fa-regular-400.abf801b7acb6705a15ad.ttf",
+    "static/media/fa-regular-400.woff2": "/.github.io/cv-application/static/media/fa-regular-400.639d2000c1ece92eaec8.woff2",
+    "static/media/fa-v4compatibility.ttf": "/.github.io/cv-application/static/media/fa-v4compatibility.f601162ae669f88823a3.ttf",
+    "static/media/fa-v4compatibility.woff2": "/.github.io/cv-application/static/media/fa-v4compatibility.745989aab0d69cab7e70.woff2",
+    "index.html": "/.github.io/cv-application/index.html",
+    "main.fc445063.css.map": "/.github.io/cv-application/static/css/main.fc445063.css.map",
+    "main.ded458db.js.map": "/.github.io/cv-application/static/js/main.ded458db.js.map",
+    "787.34a20539.chunk.js.map": "/.github.io/cv-application/static/js/787.34a20539.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.fc445063.css",
+    "static/js/main.ded458db.js"
+  ]
+}
