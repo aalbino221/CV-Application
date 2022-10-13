@@ -4,11 +4,13 @@ import AddEducation from './sections/Education';
 import AddExperience from './sections/Experience';
 import AddDescription from './sections/Description';
 import Skills from './sections/Skills';
+import Languages from './sections/Languages';
+import AddExtra from './Extra';
 
 export default function Preview({ info }) {
   return (
     <div className="main">
-      <form className="resume">
+      <div className="resume">
         <FormHeader preview info={info} />
         <section className="form-body">
           <section>
@@ -23,8 +25,12 @@ export default function Preview({ info }) {
           <section>
             <Skills preview info={info} />
           </section>
+          <section>
+            <Languages preview info={info} />
+          </section>
+          <AddExtra preview info={info} />
         </section>
-      </form>
+      </div>
     </div>
   );
 }

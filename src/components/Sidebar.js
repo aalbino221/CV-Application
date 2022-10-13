@@ -2,7 +2,7 @@ export default function Sidebar({ changePrev }) {
   return (
     <div className="sidebar">
       <section>
-        <h2>INSTRUCTIONS</h2>
+        <h3>INSTRUCTIONS</h3>
         <ol>
           <li>Select a Template</li>
           <li>
@@ -17,12 +17,12 @@ export default function Sidebar({ changePrev }) {
         </ol>
       </section>
       <section>
-        <h2>TEMPLATES</h2>
+        <h3>TEMPLATES</h3>
         <div>DEFAULT</div>
         <div>FIRST JOB</div>
       </section>
       <section>
-        <h2>DOWNLOAD</h2>
+        <h3>DOWNLOAD</h3>
         <div>
           <button type="button" onClick={changePrev} id="toggle-btn">
             <i className="fa-solid fa-toggle-off" />

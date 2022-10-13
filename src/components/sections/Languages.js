@@ -1,13 +1,13 @@
-export default function Skills({ preview, info, onChange, del }) {
+export default function Languages({ preview, info, onChange, del }) {
   switch (preview) {
     case true:
       return (
-        <section className="skills">
-          {info.skills.length !== 0 && (
+        <section className="languages">
+          {info.languages.length !== 0 && (
             <div>
-              <h2>{info.skillsTitle}</h2>
+              <h2>{info.languagesTitle}</h2>
               <ul>
-                {info.skills.map((item) => (
+                {info.languages.map((item) => (
                   <li key={item.id}>{item.str}</li>
                 ))}
               </ul>
@@ -16,11 +16,11 @@ export default function Skills({ preview, info, onChange, del }) {
         </section>
       );
     default:
-      return info.skills.map((item) => (
-        <section className="skills">
+      return info.languages.map((item) => (
+        <section className="languages">
           <input
-            placeholder="Skill here"
-            id="skill"
+            placeholder="Language here"
+            id="language"
             value={item.str !== '' ? item.str : ''}
             onChange={(e) => {
               onChange(e, item.id, 'str');
@@ -30,7 +30,7 @@ export default function Skills({ preview, info, onChange, del }) {
             type="button"
             id="delete"
             onClick={() => {
-              del('skills', item.id);
+              del('languages', item.id);
             }}
           >
             <i className="fa-solid fa-trash" /> Delete

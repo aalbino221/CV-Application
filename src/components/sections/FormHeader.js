@@ -1,4 +1,4 @@
-export default function FormHeader({ preview, info }) {
+export default function FormHeader({ preview, info, onChange }) {
   switch (preview) {
     case true:
       return (
@@ -55,29 +55,73 @@ export default function FormHeader({ preview, info }) {
             <i className="fa-solid fa-user" />
           </div>
           <div>
-            <h1 contentEditable="true">Name</h1>
-            <p contentEditable="true">Role</p>
+            <h1>
+              <input
+                placeholder="Name"
+                value={info.name !== '' ? info.name : ''}
+                onChange={(e) => {
+                  onChange(e, 'name');
+                }}
+              />
+            </h1>
+            <input
+              placeholder="Role"
+              value={info.role !== '' ? info.role : ''}
+              onChange={(e) => {
+                onChange(e, 'role');
+              }}
+            />
           </div>
           <div>
             <div>
               <i className="fa-sharp fa-solid fa-location-dot" />
-              <input placeholder="Location" />
+              <input
+                placeholder="Location"
+                value={info.location !== '' ? info.location : ''}
+                onChange={(e) => {
+                  onChange(e, 'location');
+                }}
+              />
             </div>
             <div>
               <i className="fa-sharp fa-solid fa-phone" />
-              <input placeholder="Phone" />
+              <input
+                placeholder="Phone"
+                value={info.phone !== '' ? info.phone : ''}
+                onChange={(e) => {
+                  onChange(e, 'phone');
+                }}
+              />
             </div>
             <div>
               <i className="fa-solid fa-envelope" />
-              <input placeholder="Email" />
+              <input
+                placeholder="Email"
+                value={info.email !== '' ? info.email : ''}
+                onChange={(e) => {
+                  onChange(e, 'email');
+                }}
+              />
             </div>
             <div>
               <i className="fa-brands fa-linkedin" />
-              <input placeholder="Linkedin" />
+              <input
+                placeholder="Linkedin"
+                value={info.linkedin !== '' ? info.linkedin : ''}
+                onChange={(e) => {
+                  onChange(e, 'linkedin');
+                }}
+              />
             </div>
             <div>
               <i className="fa-brands fa-github" />
-              <input placeholder="Github" />
+              <input
+                placeholder="Github"
+                value={info.github !== '' ? info.github : ''}
+                onChange={(e) => {
+                  onChange(e, 'github');
+                }}
+              />
             </div>
           </div>
         </section>
