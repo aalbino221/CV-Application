@@ -1,6 +1,6 @@
 /* eslint-disable no-param-reassign */
 /* eslint-disable react/no-unused-state */
-import React from 'react';
+import React, { useState } from 'react';
 import uniqid from 'uniqid';
 import Header from './components/Header';
 import Sidebar from './components/Sidebar';
@@ -8,78 +8,68 @@ import Footer from './components/Footer';
 import Resume from './components/Resume';
 import Preview from './components/Preview';
 
-export default class App extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      preview: false,
-      // template: 1,
-      info: {
-        photo: 'as',
-        name: 'André Luiz',
-        role: 'Estudante',
-        location: 'Paulínia, SP',
-        phone: '(19)98870-4489',
-        email: 'aalbino221@gmail.com',
-        linkedin: 'andreluiz',
-        github: 'aalbino221',
-        descriptionTitle: 'Description',
-        description:
-          'Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia quis cupiditate tempore asperiores voluptatibus unde eligendi accusantium animi ipsum, error atque odio. Ex laudantium corrupti blanditiis reprehenderit voluptatem, voluptates accusamus, mollitia numquam autem a, itaque ipsum voluptatum doloremque. Similique, nobis?',
-        experienceTitle: 'Experience',
-        jobs: [
-          {
-            id: uniqid(),
-            company: 'Vulcano',
-            location: 'Paulínia,SP',
-            role: 'Estagiário',
-            start: '05-2019',
-            end: '07-2021',
-            description:
-              '- Buscar amostras, fazer certificados nos computadores e analisar amostras',
-          },
-        ],
-        educationTitle: 'Education',
-        education: [
-          {
-            id: uniqid(),
-            school: 'Cotil (Unicamp) ',
-            degree: 'Técnico em Desenvolvimento de Sistemas',
-            city: 'Limeira',
-            start: '02-2022',
-            end: '12-2023',
-            description: '- Programação',
-          },
-          {
-            id: uniqid() + 1,
-            school: 'ETEP - Escola Técnica de Paulínia ',
-            degree: 'Técnico em Química',
-            city: 'Paulinia',
-            start: '02-2015',
-            end: '12-2017',
-            description: '- Quimica',
-          },
-        ],
-        skillsTitle: 'Skills',
-        skills: [{ id: uniqid(), str: 'Trabalhar com React' }],
-        languagesTitle: 'Languages',
-        languages: [{ id: uniqid(), str: 'Inglês: Avançado' }],
-        extraTitle: 'Extra',
-        extra: 'Curso Odin Project',
-      },
-    };
-    this.changePreview = this.changePreview.bind(this);
-    this.onChange = this.onChange.bind(this);
-    this.changeEd = this.changeEd.bind(this);
-    this.changeExp = this.changeExp.bind(this);
-    this.addNew = this.addNew.bind(this);
-    this.del = this.del.bind(this);
-    this.changeSkill = this.changeSkill.bind(this);
-  }
+export default function App() {
+  const [resume, setResume] = useState({
+    preview: false,
+    // template: 1,
+    info: {
+      photo: 'as',
+      name: 'André Luiz',
+      role: 'Estudante',
+      location: 'Paulínia, SP',
+      phone: '(19)98870-4489',
+      email: 'aalbino221@gmail.com',
+      linkedin: 'andreluiz',
+      github: 'aalbino221',
+      descriptionTitle: 'Description',
+      description:
+        'Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia quis cupiditate tempore asperiores voluptatibus unde eligendi accusantium animi ipsum, error atque odio. Ex laudantium corrupti blanditiis reprehenderit voluptatem, voluptates accusamus, mollitia numquam autem a, itaque ipsum voluptatum doloremque. Similique, nobis?',
+      experienceTitle: 'Experience',
+      jobs: [
+        {
+          id: uniqid(),
+          company: 'Vulcano',
+          location: 'Paulínia,SP',
+          role: 'Estagiário',
+          start: '05-2019',
+          end: '07-2021',
+          description:
+            '- Buscar amostras, fazer certificados nos computadores e analisar amostras',
+        },
+      ],
+      educationTitle: 'Education',
+      education: [
+        {
+          id: uniqid(),
+          school: 'Cotil (Unicamp) ',
+          degree: 'Técnico em Desenvolvimento de Sistemas',
+          city: 'Limeira',
+          start: '02-2022',
+          end: '12-2023',
+          description: '- Programação',
+        },
+        {
+          id: uniqid() + 1,
+          school: 'ETEP - Escola Técnica de Paulínia ',
+          degree: 'Técnico em Química',
+          city: 'Paulinia',
+          start: '02-2015',
+          end: '12-2017',
+          description: '- Quimica',
+        },
+      ],
+      skillsTitle: 'Skills',
+      skills: [{ id: uniqid(), str: 'Trabalhar com React' }],
+      languagesTitle: 'Languages',
+      languages: [{ id: uniqid(), str: 'Inglês: Avançado' }],
+      extraTitle: 'Extra',
+      extra: 'Curso Odin Project',
+    },
+  });
 
-  onChange(e, field) {
-    const { info } = this.state;
-    this.setState({
+  function onChange(e, field) {
+    const { info } = resume;
+    setResume({
       info: {
         ...info,
         [`${field}`]: e.target.value,
@@ -87,10 +77,10 @@ export default class App extends React.Component {
     });
   }
 
-  changeEd(e, id, field) {
-    const { info } = this.state;
+  function changeEd(e, id, field) {
+    const { info } = resume;
     const { education } = info;
-    this.setState({
+    setResume({
       info: {
         ...info,
         education: education.map((item) => {
@@ -103,10 +93,10 @@ export default class App extends React.Component {
     });
   }
 
-  changeExp(e, id, field) {
-    const { info } = this.state;
+  function changeExp(e, id, field) {
+    const { info } = resume;
     const { jobs } = info;
-    this.setState({
+    setResume({
       info: {
         ...info,
         jobs: jobs.map((item) => {
@@ -119,10 +109,10 @@ export default class App extends React.Component {
     });
   }
 
-  changeSkill(e, id, field) {
-    const { info } = this.state;
+  function changeSkill(e, id, field) {
+    const { info } = resume;
     const { skills } = info;
-    this.setState({
+    setResume({
       info: {
         ...info,
         skills: skills.map((item) => {
@@ -135,10 +125,10 @@ export default class App extends React.Component {
     });
   }
 
-  changeLanguage(e, id, field) {
-    const { info } = this.state;
+  function changeLanguage(e, id, field) {
+    const { info } = resume;
     const { languages } = info;
-    this.setState({
+    setResume({
       info: {
         ...info,
         languages: languages.map((item) => {
@@ -151,9 +141,9 @@ export default class App extends React.Component {
     });
   }
 
-  del(type, id) {
-    const { info } = this.state;
-    this.setState({
+  function del(type, id) {
+    const { info } = resume;
+    setResume({
       info: {
         ...info,
         [`${type}`]: info[`${type}`].filter((item) => item.id !== id),
@@ -161,12 +151,12 @@ export default class App extends React.Component {
     });
   }
 
-  addNew(type) {
-    const { info } = this.state;
+  function addNew(type) {
+    const { info } = resume;
     const { jobs, education, skills, languages } = info;
     switch (type) {
       case 'experience':
-        this.setState({
+        setResume({
           info: {
             ...info,
             jobs: [
@@ -185,7 +175,7 @@ export default class App extends React.Component {
         });
         break;
       case 'education':
-        this.setState({
+        setResume({
           info: {
             ...info,
             education: [
@@ -204,7 +194,7 @@ export default class App extends React.Component {
         });
         break;
       case 'skill':
-        this.setState({
+        setResume({
           info: {
             ...info,
             skills: [
@@ -218,7 +208,7 @@ export default class App extends React.Component {
         });
         break;
       case 'language':
-        this.setState({
+        setResume({
           info: {
             ...info,
             languages: [
@@ -236,42 +226,41 @@ export default class App extends React.Component {
     }
   }
 
-  changePreview() {
-    const { preview } = this.state;
-    if (preview) this.setState({ preview: false });
-    else this.setState({ preview: true });
+  function changePreview() {
+    const { preview } = resume;
+    if (preview) setResume({ preview: false });
+    else setResume({ preview: true });
   }
 
-  render() {
-    const { preview, info } = this.state;
-    switch (preview) {
-      case true:
-        return (
-          <div className="App">
-            <Header />
-            <Sidebar changePrev={this.changePreview} />
-            <Preview info={info} />
-            <Footer />
-          </div>
-        );
-      default:
-        return (
-          <div className="App">
-            <Header />
-            <Sidebar changePrev={this.changePreview} />
-            <Resume
-              info={info}
-              onChange={this.onChange}
-              changeEd={this.changeEd}
-              changeExp={this.changeExp}
-              addNew={this.addNew}
-              del={this.del}
-              changeSkill={this.changeSkill}
-              changeLanguage={this.changeLanguage}
-            />
-            <Footer />
-          </div>
-        );
-    }
+  const { preview, info } = resume;
+
+  switch (preview) {
+    case true:
+      return (
+        <div className="App">
+          <Header />
+          <Sidebar changePrev={() => changePreview} />
+          <Preview info={info} />
+          <Footer />
+        </div>
+      );
+    default:
+      return (
+        <div className="App">
+          <Header />
+          <Sidebar changePrev={() => changePreview} />
+          <Resume
+            info={info}
+            onChange={() => onChange}
+            changeEd={() => changeEd}
+            changeExp={() => changeExp}
+            addNew={() => addNew}
+            del={() => del}
+            changeSkill={() => changeSkill}
+            changeLanguage={() => changeLanguage}
+          />
+          <Footer />
+        </div>
+      );
   }
 }
